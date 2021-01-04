@@ -11,7 +11,7 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script>
             var video = null;
-            AFRAME.registerComponent('video-control', {
+            AFRAME.registerComponent('custom-marker-events', {
                 init: function () {
                     var marker = this.el;
                     marker.addEventListener('markerFound', function () {
@@ -68,6 +68,7 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
+                custom-marker-events
             >
 
                 <a-image
