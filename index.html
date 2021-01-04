@@ -9,6 +9,8 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+        <!-- マーカーの検知/消失イベントに連動してビデオの再生を再開/一時停止する -->
         <script>
             var video = null;
             AFRAME.registerComponent('custom-marker-events', {
@@ -38,12 +40,14 @@
             gesture-detector
         >
 
-            <!-- a-assets: preload/cache するアセット -->
+            <!-- a-assets: preload/cache するアセットの定義 -->
             <a-assets>
+                <!-- ろっくん画像 -->
                 <img
                     id="rockn"
                     src="assets/asset.png"
                 ></img>
+                <!-- 花火動画 -->
                 <video
                     id="fireworks"
                     src="https://cdn.aframe.io/videos/fireworks.mp4"
@@ -82,7 +86,7 @@
 
                 <a-video
                     src="#fireworks"
-                    position="1 1 1"
+                    position="2 0 0.2"
                     rotation="-90 0 0"
                 ></a-video>
 
