@@ -12,6 +12,7 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
+<!--
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
@@ -20,6 +21,8 @@
             embedded
             gesture-detector
         >
+-->
+        <a-scene>
 
 
             <!-- a-assets: preload/cache するアセット -->
@@ -28,12 +31,6 @@
                     id="rockn"
                     src="assets/asset.png"
                 ></img>
-
-                <video id="fireworks" preload="auto"
-                src="https://cdn.aframe.io/videos/fireworks.mp4"
-                width="160" height="90" autoplay loop="true"
-                crossOrigin="anonymous" muted></video>
-<!--
                 <video
                     id="fireworks"
                     src="https://cdn.aframe.io/videos/fireworks.mp4"
@@ -47,7 +44,6 @@
                     webkit-playsinline
                     playsinline
                 ></video>
--->
             </a-assets>
 
             <!-- a-marker: マーカーを検知してオブジェクトをレンダリング -->
@@ -70,13 +66,6 @@
                     rotation="-90 0 0"
                     gesture-handler
                 ></a-image>
-
-                <a-entity material="shader: flat; src: #fireworks"
-                geometry="primitive: plane"
-                position="1 1 1"
-                rotation="-90 0 0"
-                visible="true">
-                </a-entity>
 <!--
                 <a-video
                     src="#fireworks"
