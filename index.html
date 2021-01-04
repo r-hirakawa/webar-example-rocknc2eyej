@@ -1,6 +1,11 @@
 <!doctype html>
 <html>
     <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
@@ -34,6 +39,8 @@
                     muted
                     loop="true"
                     crossOrigin="anonymous"
+                    webkit-playsinline
+                    playsinline
                 ></video>
             </a-assets>
 
@@ -46,9 +53,9 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
+                id="marker"
             >
-
+<!--
                 <a-image
                     src="#rockn"
                     position="0 0 0" 
@@ -57,14 +64,12 @@
                     rotation="-90 0 0"
                     gesture-handler
                 ></a-image>
-
-                <a-entity
-                    material="shader: flat; src: #fireworks"
-                    geometry="primitive: plane; width: 160; height: 90"
-                    position="100 100 0"
+-->
+                <a-video
+                    src="#fireworks"
+                    position="0 0 0"
                     rotation="-90 0 0"
-                    visible="false"
-                ></a-entity>
+                ></a-video>
 
             </a-marker>
 
