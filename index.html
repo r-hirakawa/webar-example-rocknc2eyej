@@ -28,19 +28,26 @@
                     id="rockn"
                     src="assets/asset.png"
                 ></img>
+
+                <video id="fireworks" preload="auto"
+                src="https://cdn.aframe.io/videos/fireworks.mp4"
+                width="160" height="90" autoplay loop="true"
+                crossOrigin="anonymous" muted></video>
+<!--
                 <video
                     id="fireworks"
                     src="https://cdn.aframe.io/videos/fireworks.mp4"
                     width="160"
                     height="90"
                     preload="auto"
-                    autoplay
                     muted
+                    autoplay
                     loop="true"
                     crossOrigin="anonymous"
                     webkit-playsinline
                     playsinline
                 ></video>
+-->
             </a-assets>
 
             <!-- a-marker: マーカーを検知してオブジェクトをレンダリング -->
@@ -64,33 +71,23 @@
                     gesture-handler
                 ></a-image>
 
+                <a-entity material="shader: flat; src: #fireworks"
+                geometry="primitive: plane; width: 160; height: 90"
+                position="1 1 1"
+                rotation="-90 0 0"
+                visible="true">
+                </a-entity>
+<!--
                 <a-video
                     src="#fireworks"
                     position="1 1 1"
                     rotation="-90 0 0"
                 ></a-video>
-
+-->
             </a-marker>
 
             <a-entity camera></a-entity>
         </a-scene>
     </body>
-
-    <script>
-        var scene = document.querySelector("a-scene");
-            var video = document.getElementById("fireworks");
-    
-            if (scene.hasLoaded) {
-                run();
-            } else {
-                scene.addEventListener("loaded", playvideo);
-            }
-    
-            function playvideo() {
-                scene.querySelector(".a-enter-vr-button").addEventListener("click", function (e) {
-                    video.play();
-                }, false);
-            }
-    </script>
 
 </html>
